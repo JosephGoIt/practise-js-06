@@ -69,4 +69,35 @@ console.log(markup);
 
 list1.innerHTML = markup;
 
+const button = document.querySelector('.my-button');
+// button.addEventListener("click", ()=>{
+//     console.log("button has been click");
+// });
+const handleClick1 = (event) => {
+    console.log("event: ", event);
+    console.log("event type: ", event.type);
+    console.log("currentTarget: ", event.currentTarget);
+  };
+  
+  button.addEventListener("click", handleClick1);
 
+
+const addListenerBtn = document.querySelector('.js-add');
+const removeListenerBtn = document.querySelector('.js-remove');
+const btn = document.querySelector(".target-btn");
+
+const handleClick = () => {
+  console.log("click event listener callback");
+};
+
+addListenerBtn.addEventListener("click", () => {
+  btn.addEventListener("click", handleClick);
+  console.log("click event listener was added to btn");
+});
+
+removeListenerBtn.addEventListener("click", () => {
+  btn.removeEventListener("click", handleClick);
+  console.log("click event listener was removed from btn");
+});
+
+//key event
